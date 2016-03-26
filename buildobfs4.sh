@@ -1,13 +1,20 @@
 #!/bin/bash
 
+# THIS DOES NOT YET WORK. As-is, you’ll get an Obfs4proxy.app
+# that you can put onto a device, but does not run (possibly
+# since iOS needs a user interface defined for a real app).
+
+
 cd "`dirname \"$0\"`"
 REPOROOT=$(pwd)
 
 GOPATH=$REPOROOT/obfs4build
+PATH=$GOPATH/bin:$PATH
 
 #rm -fr $GOPATH
 #mkdir $GOPATH
 
+go get golang.org/x/mobile/cmd/gomobile
 gomobile init
 
 go get -d -u git.torproject.org/pluggable-transports/obfs4.git/obfs4proxy

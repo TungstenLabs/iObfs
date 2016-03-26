@@ -1,5 +1,7 @@
-# a temporary gopath
+# Bits related to our go-to-ios build chain
 obfs4build/
+obfs4proxy.app/
+
 
 
 
