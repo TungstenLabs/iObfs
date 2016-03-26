@@ -16,7 +16,7 @@ projects.
 This work is supported in part by [The Guardian Project][guardian].
 
 [miketigas]: https://mike.tig.as/
-[license]: https://github.com/OnionBrowser/iOS-OnionBrowser/blob/master/LICENSE
+[license]: https://github.com/mtigas/iObfs/blob/master/LICENSE
 [obfs4]: https://github.com/Yawning/obfs4
 [obfs4-alt]: https://gitweb.torproject.org/pluggable-transports/obfs4.git/
 [pt]: https://www.torproject.org/docs/pluggable-transports.html.en
