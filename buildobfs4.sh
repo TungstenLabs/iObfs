@@ -1,24 +1,33 @@
 #!/bin/bash
 
-# THIS DOES NOT YET WORK. As-is, you’ll get an Obfs4proxy.app
-# that you can put onto a device, but does not run (possibly
-# since iOS needs a user interface defined for a real app).
-
-
 cd "`dirname \"$0\"`"
-REPOROOT=$(pwd)
 
+REPOROOT=$(pwd)
 GOPATH=$REPOROOT/obfs4build
 PATH=$GOPATH/bin:$PATH
 
+set -v
+
 #rm -fr $GOPATH
 #mkdir $GOPATH
+rm -fr Iobfs4proxy.framework/
 
 go get golang.org/x/mobile/cmd/gomobile
 gomobile init
 
-go get -d -u git.torproject.org/pluggable-transports/obfs4.git/obfs4proxy
-#go install -a -x -v -work -p 8 git.torproject.org/pluggable-transports/obfs4.git/obfs4proxy
-gomobile build -target ios -a -x -v -work  git.torproject.org/pluggable-transports/obfs4.git/obfs4proxy
+go get -u github.com/mtigas/goptlib
+go get -u github.com/mtigas/obfs4/obfs4proxy
 
-#GOOS=darwin GOARCH=arm64 CC=clang-iphoneos CXX=clang-iphoneos CGO_CFLAGS="-isysroot=iphoneos -arch arm64" CGO_LDFLAGS="-isysroot=iphoneos -arch arm64" CGO_ENABLED=1 go install -pkgdir=$HOME/Code/iObfs/obfs4build -v -x -work git.torproject.org/pluggable-transports/obfs4.git/obfs4proxy
+# If, for some reason you want to build a non-working "Obfs4proxy.app"
+# built for iOS:
+#gomobile build -target ios -a -x -v -work  git.torproject.org/pluggable-transports/obfs4.git/obfs4proxy
+
+
+# After the go get, we have to patch the executable obfs4proxy
+# to be a fake library:
+# in src/git.torproject.org/pluggable-transports/obfs4.git/obfs4proxy
+# for each file, replace "package main" with "package iobfs4proxy".
+# in obfs4proxy.go, replace "func main" with "func Main"
+
+# Then we build this as a library:
+gomobile bind -target ios -a -x -v github.com/mtigas/obfs4/obfs4proxy

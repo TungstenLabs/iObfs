@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ObfsWrapper.h"
 
 @interface AppDelegate ()
 
@@ -15,8 +16,15 @@
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    ObfsWrapper *obfs = [[ObfsWrapper alloc] init];
+    [obfs start];
+
+    NSLog(@"Testing that we didn’t block when calling obfs4proxy main().");
+
     return YES;
 }
 
