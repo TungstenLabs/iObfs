@@ -19,8 +19,8 @@
 -(void)main {
     /* TODO: We should re-enable the port randomization and find a way to
      *       communicate it back to the main app thread. */
-    _obfsSocksPort = 47171;
-    _meekSocksPort = 47172;
+    _obfsSocksPort = 47351;
+    _meekSocksPort = 47352;
 
     GoIobfs4proxyMain();
 }
