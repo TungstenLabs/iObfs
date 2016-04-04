@@ -13,10 +13,10 @@
 
 @synthesize
     obfs4SocksPort = _obfs4SocksPort,
-    meekSocksPort = _meekSocksPort
+    meekSocksPort = _meekSocksPort,
     obfs2SocksPort = _obfs2SocksPort,
     obfs3SocksPort = _obfs3SocksPort,
-    scramblesuitSocksPort = _scramblesuitSocksPort,
+    scramblesuitSocksPort = _scramblesuitSocksPort
 ;
 
 -(void)main {
