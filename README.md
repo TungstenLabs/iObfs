@@ -29,6 +29,8 @@ This work is supported in part by [The Guardian Project][guardian].
 
 ---
 
+## Building Notes
+
 [`buildobfs4.sh`](https://github.com/mtigas/iObfs/blob/master/buildobfs4.sh) builds an `Iobfs4proxy.framework`, by using the [gomobile][gomobile] [`bind`][gobind] tool. Currently using forks of [obfs4](https://github.com/mtigas/obfs4) and [goptlib](https://github.com/mtigas/goptlib) with modifications such that:
 
 1. it can be built as a framework, with an externally-visible `main()`
