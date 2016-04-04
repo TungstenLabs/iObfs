@@ -7,16 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		690704F31CB1A9FE00ED208B /* Iobfs4proxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 690704F21CB1A9FE00ED208B /* Iobfs4proxy.framework */; };
+		690704F61CB1BA7800ED208B /* ObfsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 690704F51CB1BA7800ED208B /* ObfsWrapper.m */; };
 		692E54621C82382300D824BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 692E54611C82382300D824BE /* main.m */; };
 		692E54651C82382300D824BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 692E54641C82382300D824BE /* AppDelegate.m */; };
 		692E54681C82382300D824BE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692E54671C82382300D824BE /* ViewController.m */; };
 		692E546B1C82382300D824BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 692E54691C82382300D824BE /* Main.storyboard */; };
 		692E546D1C82382300D824BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 692E546C1C82382300D824BE /* Assets.xcassets */; };
 		692E54701C82382300D824BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 692E546E1C82382300D824BE /* LaunchScreen.storyboard */; };
-		6973B8F51CA0DADE00228DE0 /* obfs4proxy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6973B8F41CA0DADE00228DE0 /* obfs4proxy.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		690704F21CB1A9FE00ED208B /* Iobfs4proxy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Iobfs4proxy.framework; path = ../Iobfs4proxy.framework; sourceTree = "<group>"; };
+		690704F41CB1BA7800ED208B /* ObfsWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObfsWrapper.h; sourceTree = "<group>"; };
+		690704F51CB1BA7800ED208B /* ObfsWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObfsWrapper.m; sourceTree = "<group>"; };
 		692E545D1C82382300D824BE /* iObfs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iObfs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		692E54611C82382300D824BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		692E54631C82382300D824BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -27,7 +31,6 @@
 		692E546C1C82382300D824BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		692E546F1C82382300D824BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		692E54711C82382300D824BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6973B8F41CA0DADE00228DE0 /* obfs4proxy.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = obfs4proxy.a; path = "../../../../../var/folders/4c/rzs77cpj5q50bxvbmdqt1b000000gn/T/go-build076706415/git.torproject.org/pluggable-transports/obfs4.git/obfs4proxy.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6973B8F51CA0DADE00228DE0 /* obfs4proxy.a in Frameworks */,
+				690704F31CB1A9FE00ED208B /* Iobfs4proxy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,8 +49,8 @@
 			isa = PBXGroup;
 			children = (
 				692E545F1C82382300D824BE /* iObfs */,
+				690704F21CB1A9FE00ED208B /* Iobfs4proxy.framework */,
 				692E545E1C82382300D824BE /* Products */,
-				6973B8F41CA0DADE00228DE0 /* obfs4proxy.a */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +74,8 @@
 				692E546E1C82382300D824BE /* LaunchScreen.storyboard */,
 				692E54711C82382300D824BE /* Info.plist */,
 				692E54601C82382300D824BE /* Supporting Files */,
+				690704F41CB1BA7800ED208B /* ObfsWrapper.h */,
+				690704F51CB1BA7800ED208B /* ObfsWrapper.m */,
 			);
 			path = iObfs;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				692E54681C82382300D824BE /* ViewController.m in Sources */,
 				692E54651C82382300D824BE /* AppDelegate.m in Sources */,
 				692E54621C82382300D824BE /* main.m in Sources */,
+				690704F61CB1BA7800ED208B /* ObfsWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +276,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../**";
 				INFOPLIST_FILE = iObfs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.miketigas.iObfs;
@@ -285,6 +293,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../**";
 				INFOPLIST_FILE = iObfs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.miketigas.iObfs;

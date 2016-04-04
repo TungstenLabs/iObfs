@@ -29,13 +29,13 @@ This work is supported in part by [The Guardian Project][guardian].
 
 ---
 
-### High-level tasks
+[`buildobfs4.sh`](https://github.com/mtigas/iObfs/blob/master/buildobfs4.sh) builds an `Iobfs4proxy.framework`, by using the [gomobile][gomobile] [`bind`][gobind] tool. Currently using forks of [obfs4](https://github.com/mtigas/obfs4) and [goptlib](https://github.com/mtigas/goptlib) with modifications such that:
 
-* The first problem is building the `obfs4proxy` for iOS. There appears to be some (limited) support for cross-compiling Go into iOS, using [gomobile][gomobile] and [gobind][gobind]. (**TODO**)
+1. it can be built as a framework, with an externally-visible `main()`
+2. some of the environment variables that obfs4proxy (and other pluggable transports) expect are hard-coded in, such that we "fake" managed mode, per [this](https://github.com/mtigas/iObfs/blob/master/notes/obfs4-nonmanaged.md). the `PT_STATE` uses the `$TMPDIR` environment variable, which on iOS contains the path to the app’s [designated (sandboxed) temporary directory](https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html).
+3. the socks5 ports for the Tor<->obfs4proxy connections are hard-coded so the iOS side knows what to connect to. (TODO: this will be removed once we have a better way to communicate this out from obfs4proxy into the iOS main thread.)
 
 [gomobile]: https://golang.org/x/mobile/cmd/gomobile
 [gobind]: https://godoc.org/golang.org/x/mobile/cmd/gobind
 
-* The second hurdle is taking those techniques and linking `obfs4proxy` into a "normal" iOS app and running it (in a thread, much as [Onion Browser][onion-browser] runs tor in the app’s main process due to iOS’ single-process limitation). (**TODO**)
-
-* Finally, because `obfs4proxy` must be run as a "managed mode" pluggable transport (which requires it to be run as a subprocess of Tor), a workaround is needed to allow `obfs4proxy` to work without being forked as a subprocess, to allow it to work in iOS. (**[Solved](https://github.com/mtigas/iObfs/blob/master/notes/obfs4-nonmanaged.md).**)
+TODO: Building a Tor into this demo app to demonstrate that it works.
