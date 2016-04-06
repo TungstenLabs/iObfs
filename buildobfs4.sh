@@ -17,7 +17,6 @@ rm -fr Iobfs4proxy.framework/
 #go get golang.org/x/mobile/cmd/gomobile
 #gomobile init
 
-go get -u github.com/mtigas/goptlib
 go get -u github.com/mtigas/obfs4/obfs4proxy
 
 gomobile bind -target ios -a -x -v github.com/mtigas/obfs4/obfs4proxy
