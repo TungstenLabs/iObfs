@@ -2,6 +2,7 @@
 obfs4build/
 Iobfs4proxy.framework/
 .DS_Store
+iObfs/Carthage/
 
 
 
