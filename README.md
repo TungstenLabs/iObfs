@@ -40,6 +40,8 @@ This work is supported in part by [The Guardian Project][guardian].
 
 The framework contains a header that exposes a `GoIobfs4proxyMain();` function (the original `main()` from obfs4proxy). Note that this function must be called inside an NSThread subclass, otherwise your iOS app will be blocked on that function call. You can use `ObfsThread.h` and `ObfsThread.m` from this repo to do this for you.
 
+In the future, iObfs will wrap the build script, `Iobfs4proxy.framework`, and `ObfsThread` utilities in a framework using Carthage to improve reusability -- [see branch](https://github.com/mtigas/iObfs/tree/framework). A [go compilation issue](https://github.com/golang/go/issues/12896) prevents this from working at the moment.
+
 Please see the [GitHub issues](https://github.com/mtigas/iObfs/issues) for known issues and caveats.
 
 ---
