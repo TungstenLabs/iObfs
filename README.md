@@ -1,5 +1,6 @@
 ## iObfs
 
+[![Build Status](https://travis-ci.org/mtigas/iObfs.svg?branch=master)](https://travis-ci.org/mtigas/iObfs)  
 &copy; 2016 [Mike Tigas][miketigas] ([@mtigas](https://twitter.com/mtigas))  
 [BSD 2-clause License][license]
 

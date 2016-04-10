@@ -2,9 +2,9 @@
 
 cd "`dirname \"$0\"`"
 
-REPOROOT=$(pwd)
-GOPATH=$REPOROOT/.build
-PATH=$GOPATH/bin:$PATH
+export REPOROOT=$(pwd)
+export GOPATH=$REPOROOT/.build
+export PATH=$GOPATH/bin:$PATH
 
 mkdir -p $GOPATH
 
