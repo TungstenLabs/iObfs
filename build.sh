@@ -18,7 +18,7 @@ go get -d golang.org/x/mobile/cmd/gomobile
 cd $GOPATH/src/golang.org/x/mobile
 git remote add mtigas https://github.com/mtigas/gomobile.git
 git fetch mtigas
-git checkout ios-also-build-i386
+git checkout iobfs-build
 cd $REPOROOT
 go get -f -u golang.org/x/mobile/cmd/gomobile
 gomobile init
