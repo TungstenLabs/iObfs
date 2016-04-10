@@ -1,15 +1,15 @@
 //
-//  ObfsWrapper.m
+//  ObfsThread.m
 //  iObfs
 //
-//  Created by Mike Tigas on 4/3/16.
+//  Created by Mike Tigas on 4/9/16.
 //  Copyright © 2016 Mike Tigas. All rights reserved.
 //
 
-#import "ObfsWrapper.h"
+#import "ObfsThread.h"
 #include <Iobfs4proxy/Iobfs4proxy.h>
 
-@implementation ObfsWrapper
+@implementation ObfsThread
 
 @synthesize
     obfs4SocksPort = _obfs4SocksPort,
@@ -19,9 +19,11 @@
     scramblesuitSocksPort = _scramblesuitSocksPort
 ;
 
+
 -(void)main {
-    /* TODO: We should re-enable the port randomization and find a way to
-     *       communicate it back to the main app thread. */
+    // TODO iObfs#1 eventually fix this so we use random ports
+    //      and communicate that from obfs4proxy to iOS. These
+    //      instance properties aren't being used yet.
     _obfs4SocksPort = 47351;
     _meekSocksPort = 47352;
     _obfs2SocksPort = 47353;
@@ -30,4 +32,5 @@
 
     GoIobfs4proxyMain();
 }
+
 @end
