@@ -1,8 +1,7 @@
 # Bits related to our go-to-ios build chain
-obfs4build/
+.build/
 Iobfs4proxy.framework/
 .DS_Store
-iObfs/Carthage/
 
 
 
