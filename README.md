@@ -75,3 +75,5 @@ ObfsWrapper *obfsproxy = [[ObfsWrapper alloc] init];
 ```
 
 Then, if a user has the appropriate `Bridge` lines using one of those tranpsports (and given that you've set `UseBridges 1` appropriately), your app’s Tor should successfully use obfuscated bridges.
+
+You can see a short version of this in the `example/` directory. The README will guide you through a couple of the commits.
