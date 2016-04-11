@@ -18,6 +18,8 @@
 		6973C27B1CBB269C00D5FDED /* TorProxyURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 6973C27A1CBB269C00D5FDED /* TorProxyURLProtocol.m */; };
 		6973C27E1CBB280200D5FDED /* NSData+CocoaDevUsersAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6973C27D1CBB280200D5FDED /* NSData+CocoaDevUsersAdditions.m */; };
 		6973C2801CBB285F00D5FDED /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6973C27F1CBB285F00D5FDED /* libz.tbd */; };
+		6973C2841CBB294E00D5FDED /* Iobfs4proxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6973C2831CBB294E00D5FDED /* Iobfs4proxy.framework */; };
+		6973C2871CBB295E00D5FDED /* ObfsThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 6973C2861CBB295E00D5FDED /* ObfsThread.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,9 @@
 		6973C27C1CBB280200D5FDED /* NSData+CocoaDevUsersAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CocoaDevUsersAdditions.h"; sourceTree = "<group>"; };
 		6973C27D1CBB280200D5FDED /* NSData+CocoaDevUsersAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CocoaDevUsersAdditions.m"; sourceTree = "<group>"; };
 		6973C27F1CBB285F00D5FDED /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		6973C2831CBB294E00D5FDED /* Iobfs4proxy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Iobfs4proxy.framework; path = ../../Iobfs4proxy.framework; sourceTree = "<group>"; };
+		6973C2851CBB295E00D5FDED /* ObfsThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObfsThread.h; path = ../../ObfsThread.h; sourceTree = "<group>"; };
+		6973C2861CBB295E00D5FDED /* ObfsThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObfsThread.m; path = ../../ObfsThread.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +64,7 @@
 			files = (
 				6973C2801CBB285F00D5FDED /* libz.tbd in Frameworks */,
 				6973C2711CBAF84B00D5FDED /* Tor.framework in Frameworks */,
+				6973C2841CBB294E00D5FDED /* Iobfs4proxy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +108,7 @@
 				6973C2591CBAF3FF00D5FDED /* LaunchScreen.storyboard */,
 				6973C25C1CBAF3FF00D5FDED /* Info.plist */,
 				6973C2811CBB287100D5FDED /* TorProxying */,
+				6973C2821CBB293F00D5FDED /* ObfsProxy */,
 			);
 			path = ExampleObfs;
 			sourceTree = "<group>";
@@ -127,6 +134,16 @@
 				6973C27D1CBB280200D5FDED /* NSData+CocoaDevUsersAdditions.m */,
 			);
 			name = TorProxying;
+			sourceTree = "<group>";
+		};
+		6973C2821CBB293F00D5FDED /* ObfsProxy */ = {
+			isa = PBXGroup;
+			children = (
+				6973C2831CBB294E00D5FDED /* Iobfs4proxy.framework */,
+				6973C2851CBB295E00D5FDED /* ObfsThread.h */,
+				6973C2861CBB295E00D5FDED /* ObfsThread.m */,
+			);
+			name = ObfsProxy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +270,7 @@
 				6973C2761CBB23B900D5FDED /* CKHTTPConnection.m in Sources */,
 				6973C2531CBAF3FF00D5FDED /* ViewController.swift in Sources */,
 				6973C2511CBAF3FF00D5FDED /* AppDelegate.swift in Sources */,
+				6973C2871CBB295E00D5FDED /* ObfsThread.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +335,11 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/..",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -331,6 +354,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/..";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -363,6 +387,11 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/..",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -371,6 +400,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/..";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -383,10 +413,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = ExampleObfs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.miketigas.ExampleObfs;
@@ -399,10 +425,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = ExampleObfs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.miketigas.ExampleObfs;

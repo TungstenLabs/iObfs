@@ -11,5 +11,6 @@
 
 #import <Tor/Tor.h>
 #import "TorProxyURLProtocol.h"
+#import "ObfsThread.h"
 
 #endif /* ExampleObfs_Bridging_Header_h */
