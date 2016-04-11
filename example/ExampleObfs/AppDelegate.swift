@@ -15,6 +15,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    NSURLProtocol.registerClass(TorProxyURLProtocol)
+
+
+    let conf:TORConfiguration = TORConfiguration()
+    conf.cookieAuthentication = NSNumber(booleanLiteral: true)
+    conf.dataDirectory = NSURL(fileURLWithPath: NSTemporaryDirectory())
+
+    var args = [
+      "--socksport", "39050",
+      "--ignore-missing-torrc"
+    ]
+
+
+    // controlsocket path length is often too long
+    #if (arch(i386) || arch(x86_64)) && (os(iOS) || os(watchOS) || os(tvOS))
+      args += [
+        "--controlport", "127.0.0.1:39060"
+      ]
+    #else
+      conf.controlSocket = conf.dataDirectory?.URLByAppendingPathComponent("control_port")
+    #endif
+
+    conf.arguments = args;
+
+
+    let thread:TORThread = TORThread(configuration: conf)
+    thread.start()
+
+
+    /*
+    let cookiePath:NSURL? = conf.dataDirectory?.URLByAppendingPathComponent("control_auth_cookie")
+
+    // wait one second for tor to start up and actually
+    // write the cookie file.
+    let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 2 * Int64(NSEC_PER_SEC))
+    dispatch_after(time, dispatch_get_main_queue()) {
+        let cookie:NSData = NSData(contentsOfURL: cookiePath!)!
+
+        #if (arch(i386) || arch(x86_64)) && (os(iOS) || os(watchOS) || os(tvOS))
+            let controller:TORController = TORController(socketHost: "127.0.0.1", port: 39060)
+        #else
+            let controller:TORController = TORController(socketURL: conf.controlSocket!)
+        #endif
+        controller.authenticateWithData(cookie) { (success, error) in
+          print("we're in!")
+          if !success {
+            print("err: %@", error)
+          }
+        }
+    }
+    */
+
+
     // Override point for customization after application launch.
     return true
   }
