@@ -6,6 +6,9 @@ export REPOROOT=$(pwd)
 export GOPATH=$REPOROOT/.build
 export PATH=$GOPATH/bin:$PATH
 
+set -v
+
+rm -fr $GOPATH
 mkdir -p $GOPATH
 
 # clean up previous build
@@ -24,8 +27,14 @@ go get -f -u golang.org/x/mobile/cmd/gomobile
 gomobile init
 
 # get our forked obfs4proxy source and build it as a framework
-go get -u github.com/mtigas/obfs4/obfs4proxy
-gomobile bind -target ios -v github.com/mtigas/obfs4/obfs4proxy
+go get -d git.torproject.org/pluggable-transports/obfs4.git
+cd $GOPATH/src/git.torproject.org/pluggable-transports/obfs4.git
+git remote add mtigas https://github.com/mtigas/obfs4.git
+git fetch mtigas
+git checkout iObfs-201604-dev
+cd $REPOROOT
+go get -f -u git.torproject.org/pluggable-transports/obfs4.git/obfs4proxy
+gomobile bind -target ios -v git.torproject.org/pluggable-transports/obfs4.git/obfs4proxy
 	
 # clean up build, everything we need is in Iobfs4proxy.framework/
 rm -fr $GOPATH
