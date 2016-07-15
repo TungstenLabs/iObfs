@@ -4,11 +4,8 @@
 &copy; 2016 [Mike Tigas][miketigas] ([@mtigas](https://twitter.com/mtigas))  
 [BSD 2-clause License][license]
 
-*This is an experimental project currently in development. You should not rely on it for stability or safety at this time.*
-
-iObfs is a project to create a build process, documentation,
-and examples regarding building [obfs4proxy][obfs4]
-([alternate repo link][obfs4-alt]) for use inside Tor-enabled iOS apps, like [Onion Browser][onion-browser] and [iCepa][icepa].
+iObfs is an iOS build of [obfs4proxy][obfs4] ([alternate repo link][obfs4-alt])
+for use inside Tor apps, such as [Onion Browser][onion-browser] and [iCepa][icepa].
 
 obfs4proxy is a [pluggable transport][pt] for [Tor][tor], which can allow users to defeat certain types of network censorship. (Read some great information about pluggable transports — and how they work — [here][pt1] and [here][pt2].)
 
