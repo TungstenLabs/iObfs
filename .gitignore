@@ -1,6 +1,5 @@
 # Bits related to our go-to-ios build chain
 .build/
-Iobfs4proxy.framework/
 .DS_Store
 example/Carthage/
 
