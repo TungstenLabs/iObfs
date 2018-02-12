@@ -10,7 +10,7 @@ if ("${env.BRANCH_NAME}" ==~ /PR-\d*/) {
       cmd_bundle_exec "fastlane lint"
     }
   }
-} else if ("${env.BRANCH_NAME}" ==~ /no_modules/) {
+} else if ("${env.BRANCH_NAME}" ==~ /master/) {
   echo "Performing stages after merge to branch ${env.BRANCH_NAME}"
   runOnNode {
     fullCleanAndSetup()
