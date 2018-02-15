@@ -10,6 +10,8 @@
 #include "GoUniverse.h"
 
 
+FOUNDATION_EXPORT void GoIobfs4proxyClose();
+
 FOUNDATION_EXPORT void GoIobfs4proxyMain();
 
 #endif
