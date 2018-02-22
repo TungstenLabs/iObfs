@@ -7,7 +7,7 @@
 #define __GoIobfs4proxy_H__
 
 @import Foundation;
-#include "GoUniverse.h"
+#import "GoUniverse.h"
 
 
 FOUNDATION_EXPORT void GoIobfs4proxyClose();

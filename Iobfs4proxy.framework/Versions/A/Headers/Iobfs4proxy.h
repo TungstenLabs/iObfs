@@ -7,7 +7,7 @@
 #ifndef __Iobfs4proxy_H__
 #define __Iobfs4proxy_H__
 
-#include "GoIobfs4proxy.h"
-#include "GoUniverse.h"
+#import "GoIobfs4proxy.h"
+#import "GoUniverse.h"
 
 #endif
