@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Iobfs4proxy"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "iObfs is an iOS build of obfs4proxy for use inside Tor apps, such as Onion Browser and iCepa"
   s.description  = <<-DESC
 iObfs is an iOS build of obfs4proxy for use inside Tor apps, such as Onion Browser and iCepa.
@@ -40,6 +40,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   s.author       = { "Mike Tigas" => "https://mike.tig.as/" }
   s.platform     = :ios, '8.0'
   s.ios.deployment_target = '8.0'
-  s.source       = { :http => "https://github.com/ynd-consult-ug/iObfs/releases/download/1.0.2/Iobfs4proxy.framework.zip" }  
+  s.source       = { :http => "https://github.com/TungstenLabs/iObfs/releases/download/1.0.2/Iobfs4proxy.framework.zip" }  
   s.vendored_frameworks = 'Iobfs4proxy.framework'
 end
