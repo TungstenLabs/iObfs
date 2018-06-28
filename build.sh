@@ -30,8 +30,8 @@ eval $GOPATH/bin/gomobile init
 # get our forked obfs4proxy source and build it as a framework
 go get -d git.torproject.org/pluggable-transports/obfs4.git
 cd $GOPATH/src/git.torproject.org/pluggable-transports/obfs4.git
-git remote add ynd https://github.com/ynd-consult-ug/obfs4.git
-git fetch ynd
+git remote add tungsten https://github.com/TungstenLabs/obfs4.git
+git fetch tungsten
 git checkout iObfs-201802
 cd $REPOROOT
 go get -f -u git.torproject.org/pluggable-transports/obfs4.git/obfs4proxy
