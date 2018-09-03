@@ -32,7 +32,7 @@ go get -d git.torproject.org/pluggable-transports/obfs4.git
 cd $GOPATH/src/git.torproject.org/pluggable-transports/obfs4.git
 git remote add tungsten https://github.com/TungstenLabs/obfs4.git
 git fetch tungsten
-git checkout iObfs-201802
+git checkout iObfs-201808
 cd $REPOROOT
 go get -f -u git.torproject.org/pluggable-transports/obfs4.git/obfs4proxy
 eval $GOPATH/bin/gomobile bind -target ios -v git.torproject.org/pluggable-transports/obfs4.git/obfs4proxy
