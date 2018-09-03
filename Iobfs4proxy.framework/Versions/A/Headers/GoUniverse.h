@@ -7,8 +7,8 @@
 #define __GoUniverse_H__
 
 @import Foundation;
-#include "GoUniverse.h"
-
+#import "GoUniverse.h"
+#import "ref.h"
 
 @protocol GoUniverseerror;
 @class GoUniverseerror;

@@ -5,7 +5,7 @@
 #ifndef __GO_REF_HDR__
 #define __GO_REF_HDR__
 
-#include <Foundation/Foundation.h>
+#import <Foundation/Foundation.h>
 
 // GoSeqRef is an object tagged with an integer for passing back and
 // forth across the language boundary. A GoSeqRef may represent either
